@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+    <servlet>
+        <servlet-name>GetList</servlet-name>
+        <servlet-class>ua.kiev.prog.GetListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetList</servlet-name>
+        <url-pattern>/get</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Add</servlet-name>
+        <servlet-class>ua.kiev.prog.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Add</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Auth</servlet-name>
+        <servlet-class>ua.kiev.prog.com.gmile.psyh2409.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Auth</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Users</servlet-name>
+        <servlet-class>ua.kiev.prog.com.gmile.psyh2409.UsersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Users</servlet-name>
+        <url-pattern>/getUsers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Has</servlet-name>
+        <servlet-class>ua.kiev.prog.com.gmile.psyh2409.HasServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Has</servlet-name>
+        <url-pattern>/has</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Update</servlet-name>
+        <servlet-class>ua.kiev.prog.com.gmile.psyh2409.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>
