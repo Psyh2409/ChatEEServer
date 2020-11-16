@@ -27,31 +27,29 @@ public class AddServlet extends HttpServlet {
         String recipient = msg.getTo();
         Room room = null;
         if (msg != null) {
-            if (msg.getTo().equals("everyone")) msgList.add(msg);
-            else {
-                for (User u : userSet.getUserSet()) {
-                    if (u.getLogin().equals(recipient)) {
-                        u.getMesList().add(msg);
-                        break;
-                    } else {
-                        for (User r : userSet.getUserSet()) {
-                            if (r.getLogin().equals(sender)) {
-                                if (!r.getMesList().contains(msg))
-                                    r.getMesList().add(msg);
-                                room = r.getRooms().get(recipient);
-                                if (room != null) {
-                                    if (!room.getMessages().contains(msg))
-                                        room.getMessages().add(msg);
-                                    for (String s : room.getUsers()) {
-                                        for (User e : userSet.getUserSet()) {
-                                            if (e.getLogin().equals(s)) {
-                                                if (!e.getMesList().contains(msg))
-                                                    e.getMesList().add(msg);
-                                            }
+            msgList.add(msg);
+            for (User u : userSet.getUserSet()) {
+                if (u.getLogin().equals(recipient)) {
+                    u.getMesList().add(msg);
+                    break;
+                } else {
+                    for (User r : userSet.getUserSet()) {
+                        if (r.getLogin().equals(sender)) {
+                            if (!r.getMesList().contains(msg))
+                                r.getMesList().add(msg);
+                            room = r.getRooms().get(recipient);
+                            if (room != null) {
+                                if (!room.getMessages().contains(msg))
+                                    room.getMessages().add(msg);
+                                for (String s : room.getUsers()) {
+                                    for (User e : userSet.getUserSet()) {
+                                        if (e.getLogin().equals(s)) {
+                                            if (!e.getMesList().contains(msg))
+                                                e.getMesList().add(msg);
                                         }
                                     }
-                                    break;
                                 }
+                                break;
                             }
                         }
                     }
